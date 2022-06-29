@@ -1,0 +1,16 @@
+{
+  "name": "juancitocubo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "juancitocubo",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.7.0",
+    "mineflayer": "^4.3.0"
+  }
+}
