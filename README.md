@@ -18,7 +18,7 @@ Or, click on the green "Code" button that has the download icon and click on "Do
 
 5: You'll need to install dependencies first, run `npm i or npm install`
 
-6: after you have everything downloaded and installed you have to configure everything from (file)
+6: after you have everything downloaded and installed you have to configure everything from (./config.json)
 
 7: After it is installed, run `npm start or node index.js`
 
