@@ -1,5 +1,5 @@
 {
-    "token": "OTQwNjAwMDQxMzQzNjkyODMx.GFqXHi.zywKdIfLszkP_yJdjvUZrv9OMu_W_l0UH_PHEc", // Set your Token of your bot
+    "token": "1234", // Set your Token of your bot
     "prefix": "?", //Set a prefix for your bot to use the commands, example: (?) example command: (?coords)
     "ip": "0.0.0.0", // Ip example: (localhost or 0.0.0.0)
     "port": 25565, // Set the server port example: (25565)
