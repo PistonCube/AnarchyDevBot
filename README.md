@@ -38,5 +38,9 @@ Remember that this bot is not 100% finished, so it will be modified every so oft
  Prefix+tps - gives the tps of the server | 
  Prefix+say - say what you want | 
  and many more commands that will be implemented
+ 
+ # Errors
+ ``any errors feel free to create a pull request``
+
 
  
