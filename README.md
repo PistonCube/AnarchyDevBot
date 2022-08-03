@@ -26,3 +26,17 @@ and now to enjoy the bot, please if you are going to use the bot do not pass it 
 
 Remember that this bot is not 100% finished, so it will be modified every so often. Remember that if you want to contribute something to this Bot, you can send it to my discord:
  `juancitocubo#0833`
+ 
+ 
+#Commands
+ 
+ Prefix+coords - gives its coordinates
+ Prefix+sleepo - tells you if you can sleep
+ Prefix+time - tell the time
+ Prefix+kill - kills
+ #Commands next
+ Prefix+tps - gives the tps of the server
+ Prefix+say - say what you want
+ and many more commands that will be implemented
+
+ 
