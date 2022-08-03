@@ -28,13 +28,13 @@ Remember that this bot is not 100% finished, so it will be modified every so oft
  `juancitocubo#0833`
  
  
-#Commands
+# Commands
  
  Prefix+coords - gives its coordinates
  Prefix+sleepo - tells you if you can sleep
  Prefix+time - tell the time
  Prefix+kill - kills
- #Commands next
+ # Commands next
  Prefix+tps - gives the tps of the server
  Prefix+say - say what you want
  and many more commands that will be implemented
