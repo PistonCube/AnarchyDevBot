@@ -1,12 +1,18 @@
 {
-    "token": "TOKEN",
-    "prefix": "=",
-    "ip": "SERVER IP EJ: 7R7B.ORG",
-    "port": 25565,
-    "username": "USERNAME EJ: AnarchyDevBot",
-    "version": "1.12.2",
-    "chatchannelid": "",
-    "guildid": "",
-    "userid": "",
-    "loginmessage": "hi"
+    "token": "OTQwNjAwMDQxMzQzNjkyODMx.GFqXHi.zywKdIfLszkP_yJdjvUZrv9OMu_W_l0UH_PHEc", // Set your Token of your bot
+    "prefix": "?", //Set a prefix for your bot to use the commands, example: (?) example command: (?coords)
+    "ip": "0.0.0.0", // Ip example: (localhost or 0.0.0.0)
+    "port": 25565, // Set the server port example: (25565)
+    "username": "AnarchyDevBot_Test", // Set su to the nickname of the bot example: (AnarchyDevBot), and if you put your bot in mojang or microsoft mode put your email, example: email@example.com
+    "password": "", // Put the password of your account, this only works for premium accounts if it is a cracked account leave as is
+    "password_server": "P@ssw0rd1234", // If the server is   not premium put a password, example: (P@ssw0rd1234)
+    "version": "1.12.2", // Server version
+    "auth": "cracked", // Mojang or Microsoft or Cracked
+    "chatchannelid": "0000000000000000000", // set to your discord channel id for the chat
+    "guildid": "0000000000000000000", // Set to your guild id on discord
+    "userid": "0000000000000000000", // Set to your user id on discord, or the commands wont work
+    "activity": "Configuring anarchy servers", // Bot info
+    "status": "online", // Bot status dnd / online / idle
+    "antiafk": "true", // bot goes forward for anti-afk, true / false
+    "loginmessage": "I am the anarchydev bot, created by juancitocubo" // Message on login
 }

@@ -1,39 +1,40 @@
 const config = require("./config.json");
 const Discord = require('discord.js');
+const pathfinder = require("mineflayer-pathfinder");
+const antiAFK = require("mineflayer-antiafk");
+const mcProtocol = require("minecraft-protocol");
 const dbot = new Discord.Client({disableEveryone: true, intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES]});
 let cooldown = new Set();
 let cdseconds = 2;
 let joinseconds = 10;
 
-
-
 var mineflayer = require('mineflayer');
 var bot = mineflayer.createBot({
-  host: config.ip, // Server IP for bot to connect to
-  port: config.port,       // server port for bot to connect to
-  username: config.username, // email for bot
-  password: config.password,          // password for bot
-  auth: config.auth, // auth for bot
-  version: config.version, // version of server bot is trying to connect to
+  host: config.ip,
+  port: config.port,
+  username: config.username,
+  password: config.password,
+  auth: config.auth,
+  version: config.version,
+});
+dbot.on("ready", async () => {
+    console.log(`Bot create by juancitocubo#0833`);
+  });
+  ({
 });
 dbot.on("ready", async () => {
     console.log(`Discord bot ${dbot.user.username} is ready!`);
+    
 
-    dbot.user.setActivity("me penis", {type: "WATCHING"}); // Bot info
-    dbot.user.setStatus('dnd') // Bot status dnd / online / idle
-    bot.setControlState('forward', true) //bot goes forward for anti-afk PLEASE improve this in a pull request.
+    dbot.user.setActivity(`${config.activity}`, {type: "WATCHING"});
+    dbot.user.setStatus(`${config.status}`)
+    bot.setControlState(`forward`, false) 
 
 });
 bot.on('login', () => {
-    bot.chat(config.loginmessage) // message on login
+    bot.chat(config.loginmessage)
     console.log(`Minecraft bot is ready!`);
 });
-// bot.on('message', msg => { 
-//  dbot.guilds.get(config.guildid).channels.get(config.chatchannelid).send({embed: {
-//    color: 3447003,
-//    description: (msg.toString()) // embed for the chat in discord
-//  }});
-//    });
 bot.on('chat', function(username, message) {
   if(!message.startsWith(config.prefix)) return;
   if(cooldown.has("active")){
@@ -44,12 +45,13 @@ bot.on('chat', function(username, message) {
     if (username === bot.username) {
       return;
   }
-    bot.chat(`>My current coords are ${bot.entity.position.toString()}`)
+    bot.chat(`> My coords are ${Math.floor(bot.entity.position.x)} ${Math.floor(bot.entity.position.y)} ${Math.floor(bot.entity.position.z)}`)
   cooldown.add("active")
   setTimeout(() => {
     cooldown.delete("active")
   }, cdseconds * 1000)
 }
+
   if (message.startsWith(config.prefix + 'sleep')){
     console.log(username, message)
 
@@ -92,26 +94,26 @@ bot.on('chat', function(username, message) {
 };
   }
 });
-// bot.on('playerJoined', (player) => {
-//   if (player.username !== bot.username) {
-//     bot.chat(`Hello, ${player.username}! Welcome to the server.`)
-//   }
-// })
-// bot.on('playerLeft', (player) => {
-//   if (player.username === bot.username) return
-//   bot.chat(`Bye ${player.username}`)
-// })
+bot.on('playerJoined', (player) => {
+if (player.username !== bot.username) {
+bot.chat(`>Welcome ${player.username}! to a peaceful christian server, be sure to read the rules using /kill`)
+  }
+})
+bot.on('playerLeft', (player) => {
+if (player.username === bot.username) return
+bot.chat(`>Bay ${player.username} he went to jerk off <=3`)
+})
 dbot.on("messageCreate", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
-  if(!message.channel.id == config.chatchannelid) return; // set to your discord channel id for the chat
+  if(!message.channel.id == config.chatchannelid) return;
 
-  let prefix = config.prefix; //prefix for the bot commands like !send etc
+  let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0]
   let args = messageArray.slice(1);
   let botmessage = args.join(" ");
-  if(message.author.id == config.userid) { // Set to your user id on discord, or the commands wont work
+  if(message.author.id == config.userid) {
   if(cmd === `${prefix}send`){
     bot.chat(botmessage)
     message.channel.send("sent")
@@ -119,17 +121,9 @@ dbot.on("messageCreate", async message => {
   if(cmd === `${prefix}look`){
     bot.look(botmessage,0,false);
   };
-} else {
-  message.channel.send("")
-} //
-});
-bot.chatAddPattern(/^([^ ]*) joined the game$/, 'join', 'join message')
-bot.on('join', (username, message, type, rawMessage, matches) => {
-  if(cooldown.has("joins")){
-    return console.log("joins")
-    }
+}
   if (username === bot.username) return
-  bot.chat(`> Welcome ${username} to a peaceful christian server, make sure to read the rules.`)
+  bot.chat(`>Welcome ${player.username}! to a peaceful christian server, be sure to read the rules using /kill`)
   cooldown.add("joins")
   setTimeout(() => {
     cooldown.delete("joins")
@@ -146,11 +140,11 @@ function bindEvents(bot) {
   });
 }
 bot.on('kicked', function(reason) {
-  console.log("I got kicked for ", reason, " lol");
+  console.log("I got kicked for ", reason, " :(");
   let chatChannel = dbot.channels.cache.get(config.chatchannelid);
   if (chatChannel) {
   	let kicked = new Discord.MessageEmbed();
-    kicked.setDescription(`I got kicked for ${reason} lol`);
+    kicked.setDescription(`I got kicked for ${reason} :(`);
     chatChannel.send({embeds: [kicked]});
   }
 });
@@ -164,16 +158,14 @@ bot.on('error', err => console.log(err));
 dbot.login(config.token);
 
 bot.on("message", msg => {
-    // piece of code for auth
     let m = msg.toString();
     if (m.match("/login")) {
-        bot.chat("/login juanchito");
+        bot.chat(`/login ${config.password_server}`);
     }
     else if (m.match("/register")) {
-        bot.chat("/register juanchito juanchito");
+        bot.chat(`/register ${config.password_server} ${config.password_server}`);
     }
     
-    // piece of code for the chat bridge
     let chatChannel = dbot.channels.cache.get(config.chatchannelid);
     if (chatChannel) {
         let messageEmbed = new Discord.MessageEmbed();
@@ -182,4 +174,5 @@ bot.on("message", msg => {
         if (m.trim() == "") return;
         chatChannel.send({embeds: [messageEmbed]});
     }
-});
+      });
+  
