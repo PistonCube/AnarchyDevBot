@@ -14,5 +14,5 @@
     "activity": "Configuring anarchy servers", // Bot info
     "status": "online", // Bot status dnd / online / idle
     "antiafk": "true", // bot goes forward for anti-afk, true / false
-    "loginmessage": "I am the anarchydev bot, created by juancitocubo" // Message on login
+    "loginmessage": "I am the anarchydev bot, created by PistonCube" // Message on login
 }
