@@ -11,7 +11,7 @@ this bot was created especially for my 2l2c.org server but I have decided to mak
 
 2: Open the terminal or command line of your choice.
 
-3: Run the command `git clone https://github.com/juancitocubo/AnarchyDevBot` 
+3: Run the command `git clone https://github.com/PistonCube/AnarchyDevBot` 
 Or, click on the green "Code" button that has the download icon and click on "Download ZIP".
 
 4: After the repository is cloned or downloaded to your disk, run `cd AnarchyDevBot`
@@ -25,7 +25,7 @@ Or, click on the green "Code" button that has the download icon and click on "Do
 and now to enjoy the bot, please if you are going to use the bot do not pass it off as you created it, it took a long time to create it and I would appreciate it if you did not do that
 
 Remember that this bot is not 100% finished, so it will be modified every so often. Remember that if you want to contribute something to this Bot, you can send it to my discord:
- `juancitocubo#0833`
+ `PistonCube#0001`
  
  
 # Commands
