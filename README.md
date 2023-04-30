@@ -2,7 +2,7 @@
 
 
 A simple bot with a built-in Minecraft chat that you can chat with in real time and some commands.
-this bot was created especially for my 2l2c.org server but I have decided to make it open source.
+this bot was created especially for my 2b2t.com.ar server but I have decided to make it open source.
 
 
 # Installation
